@@ -1,2 +1,2 @@
 # SampleCode
-A Sample Code to Use IdProo API
+Sample Application SSO Integration with IdProo
