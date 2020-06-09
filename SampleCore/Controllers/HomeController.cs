@@ -34,6 +34,12 @@ namespace SampleCore.Controllers
             return await HttpContext.GetTokenAsync("access_token");
         }
 
+        [Authorize]
+        public string Key()
+        {
+            return Request.Headers["W-Key"].ToString();
+        }
+
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()
         {
