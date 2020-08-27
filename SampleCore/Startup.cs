@@ -57,12 +57,11 @@ namespace SampleCore
                 .AddOpenIdConnect("oidc", options =>
                 {
                     options.SignInScheme = "Cookies";
-                    //options.Authority = "https://login.waskita.co.id:6443/";
-                    options.Authority = "https://login2.waskita.co.id/";
+                    options.Authority = "https://login.com/";
                     options.RequireHttpsMetadata = false;
 
-                    options.ClientId = "57fdb529-d82b-4ace-b772-865b86060038";
-                    options.ClientSecret = "c33f83d7-f0f2-4a0f-9309-dd1853d6f259";
+                    options.ClientId = "xxxxxx-xxxx-xxxx-xxxxxx";
+                    options.ClientSecret = "xxxxxx-xxxx-xxxx-xxxxxx";
                     options.ResponseType = "code id_token";
 
                     options.SaveTokens = true;

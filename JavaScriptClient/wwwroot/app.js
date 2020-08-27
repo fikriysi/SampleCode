@@ -20,7 +20,7 @@ document.getElementById("logout").addEventListener("click", logout, false);
 
 var config = {
     authority: "http://localhost:5000",
-    client_id: "222e6078-3138-4387-9b98-4117d2552311", 
+    client_id: "xxxxxx-xxxx-xxxx-xxxxxx", 
     redirect_uri: "http://localhost:5003/callback.html",
     response_type: "code",
     scope:"openid profile api.auth user.read user.readAll",

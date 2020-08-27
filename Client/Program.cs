@@ -27,8 +27,8 @@ namespace Client
             var tokenResponse = await client.RequestClientCredentialsTokenAsync(new ClientCredentialsTokenRequest
             {
                 Address = disco.TokenEndpoint,
-                ClientId = "580ab506-e6ea-4b18-86b0-e5517dc7b28f",
-                ClientSecret = "49af6bac-7fac-411d-ba68-418f40c3d7e3",
+                ClientId = "xxxxxx-xxxx-xxxx-xxxxxx",
+                ClientSecret = "xxxxxx-xxxx-xxxx-xxxxxx",
 
                 Scope = "api.auth user.readAll"
             });

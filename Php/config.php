@@ -6,8 +6,8 @@ $scope_info = "This service requires the following permissions for your account:
 
 // Client configuration
 $issuer = "http://localhost:5000/";
-$client_id = "b3bf431d-f373-40c4-96f9-fe688238a231";
-$client_secret = "68c44822-7e1f-46c9-8249-6f7a91c8781f";
+$client_id = "xxxxxx-xxxx-xxxx-xxxxxx";
+$client_secret = "xxxxxx-xxxx-xxxx-xxxxxx";
 $redirect_url = "http://localhost:81/oauth/refreshtoken.php";
 // add scopes as keys and a friendly message of the scope as value
 $scopesDefine = array('openid' => 'log in using your identity', 

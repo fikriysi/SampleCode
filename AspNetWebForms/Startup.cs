@@ -23,10 +23,10 @@ namespace AspNetWebForms
     public class Startup
     {
         // These values are stored in Web.config. Make sure you update them!
-        private readonly string _clientId = ConfigurationManager.AppSettings["IdProo:ClientId"]; 
-        private readonly string _redirectUri = ConfigurationManager.AppSettings["IdProo:RedirectUri"];
-        private readonly string _authority = ConfigurationManager.AppSettings["IdProo:Authority"];
-        private readonly string _clientSecret = ConfigurationManager.AppSettings["IdProo:ClientSecret"];
+        private readonly string _clientId = ConfigurationManager.AppSettings["IdAMan:ClientId"]; 
+        private readonly string _redirectUri = ConfigurationManager.AppSettings["IdAMan:RedirectUri"];
+        private readonly string _authority = ConfigurationManager.AppSettings["IdAMan:Authority"];
+        private readonly string _clientSecret = ConfigurationManager.AppSettings["IdAMan:ClientSecret"];
 
         public void Configuration(IAppBuilder app)
         { 
