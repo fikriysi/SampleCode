@@ -6,7 +6,6 @@
 
   <ItemGroup>
     <PackageReference Include="IdentityServer4.EntityFramework" Version="4.1.1" />
-    <PackageReference Include="Signatr.Client" Version="1.0.0.202104223" />
   </ItemGroup>
 
 </Project>
