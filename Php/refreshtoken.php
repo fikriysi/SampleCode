@@ -29,6 +29,20 @@
     <meta charset="utf-8" />
     <link rel="stylesheet" href="vendor/twbs/bootstrap/dist/css/bootstrap.css" />
 </head>
+<style>
+.userInfo-table {
+    border: solid 1px #DDEEEE;
+    border-collapse: collapse;
+    border-spacing: 0;
+    font: normal 13px Arial, sans-serif;
+}
+.userInfo-table tbody td {
+    border: solid 1px #DDEEEE;
+    color: #333;
+    padding: 10px;
+    text-shadow: 1px 1px 1px #fff;
+}
+</style>
 <body>
     <nav class="navbar sticky-top navbar-expand-xl bg-primary">
         <div class="container d-flex justify-content-between">
@@ -44,12 +58,22 @@
           <div class="jumbotron">
             <img class="sticky" src="<?php echo $img; ?>" alt="Logo" style="height: 60px; width: 60px; margin-bottom: 20px;">
             <h1 style="display: inline;"><?php echo $title; ?></h1>
-            <p>
-            <?php  echo var_dump($infoUser);?>
-            </p>
+            <br/>
+			<h3 style="display: inline;">User Property</h3>
+			<table class="userInfo-table">
+
+				<?php  foreach($infoUser as $userKey => $userValue):?> 
+
+						<tr>
+							<td><?=$userKey;?></td>
+							<td><?=$userValue;?></td>
+						</tr>
+				<?php endforeach;?>
+			</table>
+			<br/>
             <p style="margin-bottom: 0px;"><b>Client ID: </b> <?php echo $client_id; ?></p>
             <p><b>Client Secret: </b> <?php echo $client_secret; ?></p>
-            <p class="lead" style="margin-bottom: 0px;">Refresh Token: </p>
+            <p class="	" style="margin-bottom: 0px;">Refresh Token: </p>
             <input id="refreshtoken" size=70 type="text" readonly style="cursor: text;" value="<?php echo $refreshToken; ?>" />
             <button id="copy" style="cursor: pointer" class="btn btn-copy btn-primary"><i class="icon-file"></i> Copy</button>
             <p><?php echo $refresh_token_note; ?></p>
