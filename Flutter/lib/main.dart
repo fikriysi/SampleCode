@@ -26,19 +26,22 @@ class _MyAppState extends State<MyApp> {
   TextEditingController _idTokenTextController = TextEditingController();
   TextEditingController _refreshTokenTextController = TextEditingController();
 
-  String _clientId = 'ClientId';
-  String _redirectUrl = 'io.identityserver.demo:/oauthredirect';
-  String _issuer = 'https://login.issuer.com';
+  String _clientId = 'client_id';
+  String _redirectUrl = 'com.example.fluttersso:/oauthredirect';
+  String _issuer = 'https://login.provider.com';
   List<String> _scopes = <String>[
     'openid',
     'profile',
     'email',
+    'offline_access'
   ];
 
   AuthorizationServiceConfiguration _serviceConfiguration =
       const AuthorizationServiceConfiguration(
-          'https://login.issuer.com/connect/authorize',
-          'https://login.issuer.com/connect/token');
+    authorizationEndpoint: 'https://login.provider.com/connect/authorize',
+    tokenEndpoint: 'https://login.provider.com/connect/token',
+    endSessionEndpoint: 'https://login.provider.com/connect/endsession',
+  );
 
   @override
   void initState() {
@@ -108,11 +111,24 @@ class _MyAppState extends State<MyApp> {
                 controller: _refreshTokenTextController,
               ),
               ElevatedButton(
-                onPressed: () {
+                onPressed: () async {
                   // sharePreferences clear/empty
                   // hive clear/empty
                   // SQlite clear/empty
-                  launch("https://identity.urinya/logout");
+                  // launch("https://identity.urinya/logout");
+                  await _appAuth.endSession(EndSessionRequest(
+                      idTokenHint: _idTokenTextController.text,
+                      postLogoutRedirectUrl:
+                          'com.example.fluttersso:/',
+                      serviceConfiguration: _serviceConfiguration));
+
+                  _authorizationCodeTextController.clear();
+                  _accessTokenExpirationTextController.clear();
+                  _accessTokenTextController.clear();
+                  _authorizationCodeTextController.clear();
+                  _accessTokenTextController.clear();
+                  _idTokenTextController.clear();
+                  _refreshTokenTextController.clear();
                 },
                 child: Text('Logout'),
               )
